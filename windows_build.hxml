@@ -1,0 +1,4 @@
+-cp src
+-m Main
+-cpp dist/windows/scaffolda
+-resource src/templates/scaffolda_example.xml@template_example

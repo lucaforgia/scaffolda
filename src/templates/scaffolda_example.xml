@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<scaffolda-template description="Template example" title="Example">
+
+  <direrctory-structure>
+    <dir name="dist">
+      <dir name="hashlink" destination="dist"></dir>
+    </dir>
+    <dir name="lib"/>
+    <dir name="src">
+      <file name="Main.hx">
+        class Main {
+          static public function main():Void {
+            trace("Hello World");
+          }
+        }
+      </file>
+    </dir>
+    <file name="interp_build.hxml">
+      -cp src
+      -m Main
+      --interp
+    </file>
+    <file name="hashlink_build.hxml">
+      -cp src
+      -m Main
+      -hl dist/hashlink/app.hl
+    </file>  
+  </direrctory-structure>
+
+</scaffolda-template>

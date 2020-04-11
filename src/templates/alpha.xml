@@ -1,0 +1,55 @@
+
+<?xml version="1.0" encoding="utf-8" ?>
+<scaffolda-template description="Generic template good for everything" title="Generic" id="0">
+
+  <direrctory-structure>
+    <dir name="dist">
+      <dir name="hashlink" destination="dist"></dir>
+    </dir>
+    <dir name="lib"/>
+    <dir name="src">
+      <file name="Main.hx">
+        class Main {
+          static public function main():Void {
+            trace("Hello World");
+          }
+        }
+      </file>
+    </dir>
+    <file name="interp_build.hxml">
+      -cp src
+      -m Main
+      --interp
+    </file>
+    <file name="hashlink_build.hxml">
+      -cp src
+      -m Main
+      -hl dist/hashlink/app.hl
+    </file>  
+  </direrctory-structure>
+
+
+<!-- separare targets da templates? -->
+  <targets>
+    <target id="hashlink">
+      <dir name="hashlink" destination="dist"></dir>
+      <file name="hashlink_build.hxml">
+        -cp src
+        -m Main
+        -hl dist/hashlink/app.hl
+      </file>
+    </target>
+    <target id="neko">
+      <dir name="neko" destination="dist"></dir>
+      <file name="neko_build.hxml">
+        -cp src
+        -m Main
+        -neko dist/neko/app.n
+      </file>
+    </target>    
+  </targets>
+
+
+
+
+</scaffolda-template>
