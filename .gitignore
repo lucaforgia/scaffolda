@@ -31,4 +31,4 @@
 *.out
 *.app
 /build/*
-7dist/*
+/dist/*
